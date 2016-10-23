@@ -1,0 +1,2 @@
+vhdl work "MultiPlexo.vhd"
+vhdl work "tb_Multiplexor.vhd"

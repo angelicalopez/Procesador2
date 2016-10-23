@@ -56,16 +56,16 @@ type rom_type is array (0 to 31) of std_logic_vector (31 downto 0);
 		end loop;
 	return temp_mem;
 	end function;
-	signal instructions : rom_type := InitRomFromFile("programa1.txt");
+	signal instructions : rom_type := InitRomFromFile("programa1.txt");  -- se;al que contiene una array de 32 bits 
 
 
 begin
 	process(rst,direccion, instructions)
 	begin		
 			if(rst = '1')then
-				instruccion <= (others=>'0');
+				instruccion <= (others=>'0'); --limpia el reloj 
 			else
-				instruccion <= instructions(conv_integer(direccion(5 downto 0)));
+				instruccion <= instructions(conv_integer(direccion(5 downto 0))); --aqui se convierte en entero 
 			end if;
 		
 	end process;

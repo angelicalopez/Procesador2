@@ -45,8 +45,8 @@ begin
 
 process(suma1,suma2, alu_op)
 begin
- case (alu_op) is 
-			when "000001" => -- add
+ case (alu_op) is                             -- todos son casos 
+			when "000001" => -- add              --operaciones de op3 
 				salida_alu <= suma1 + suma2;
 			when "000010" => -- addcc
 				salida_alu <= suma1 + suma2;

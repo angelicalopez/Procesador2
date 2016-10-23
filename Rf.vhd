@@ -51,17 +51,17 @@ process(rf1,rf2,rst, rd,crd)
 
 begin
 	if(rst = '1')then
-				crf1<= (others=>'0');
+				crf1<= (others=>'0');  --limpia el reloj 
 				crf2<= (others=>'0');
 			
 				reg<= (others => x"00000000");
 			else
-				crf1<= reg(conv_integer(rf1));
-				crf2<= reg(conv_integer(rf1));
+				crf1<= reg(conv_integer(rf1));  --conertir en entero lo que esta en el contenido de los registros 
+				crf2<= reg(conv_integer(rf2));
 				
 				
 			if(rd  /= "000000")then
-					reg(conv_integer(rd)) <= crd;
+					reg(conv_integer(rd)) <= crd;   --si el rd es diferente de 0, convertir lo que hay en el en entero y asigarlo al contenido del rd
 				end if;
 			end if;
 	
